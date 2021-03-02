@@ -17,5 +17,13 @@ struct Thing
 
 int main()
 {
-
+	Thing* chair = new Thing;
+	chair->name = "Chair";
+	chair->mass = 3.5;
+	chair->height = 0.9;
+	std::shared_ptr<Material> madeOfPlastic;
+	madeOfPlastic->material = "plastic";
+	madeOfPlastic->color = "black";
+	chair->madeOf = madeOfPlastic;
+	delete chair;
 }

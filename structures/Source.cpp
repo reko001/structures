@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> //github.com/reko001/structures
 #include <string>
 
 struct Material
@@ -25,5 +25,11 @@ int main()
 	madeOfPlastic->material = "plastic";
 	madeOfPlastic->color = "black";
 	chair->madeOf = madeOfPlastic;
+	Thing* bin = new Thing;
+	bin->name = "Bin";
+	bin->mass = 0.2;
+	bin->height = 0.4;
+	bin->madeOf = madeOfPlastic;
 	delete chair;
+	delete bin;
 }

@@ -12,7 +12,7 @@ struct Thing
 	std::string name = "Desk";
 	double mass = 10.0;
 	double height = 1.0;
-	std::shared_ptr<Material> madeOf;
+	Material* madeOf;
 };
 
 int main()
@@ -21,15 +21,10 @@ int main()
 	chair->name = "Chair";
 	chair->mass = 3.5;
 	chair->height = 0.9;
-	std::shared_ptr<Material> madeOfPlastic;
-	madeOfPlastic->material = "plastic";
-	madeOfPlastic->color = "black";
-	chair->madeOf = madeOfPlastic;
-	Thing* bin = new Thing;
-	bin->name = "Bin";
-	bin->mass = 0.2;
-	bin->height = 0.4;
-	bin->madeOf = madeOfPlastic;
+	Material* classicPtr = new Material;
+	classicPtr->material = "wood";
+	classicPtr->color = "gray";
+	chair->madeOf = classicPtr;
+	delete classicPtr;
 	delete chair;
-	delete bin;
 }
